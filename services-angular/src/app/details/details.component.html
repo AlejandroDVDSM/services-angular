@@ -1,9 +1,9 @@
-<div class="details">
-    <p>Status: {{ status }}</p>
-    <p>Specie: {{ species }}</p>
-    <p>Origin: {{ origin }}</p>
-    <p>Gender: {{ gender }}</p>
-    <p>Actual location: {{ location }}</p>
+<div class="details" *ngIf="this.isVisible && this.card_id == this.character.id ">
+    <p>Status: {{ character.status }}</p>
+    <p>Specie: {{ character.species }}</p>
+    <p>Origin: {{ character.origin.name }}</p>
+    <p>Gender: {{ character.gender }}</p>
+    <p>Last location: {{ character.location.name }}</p>
 </div>
 
 

@@ -1,23 +1,21 @@
-<div class="grid-container" >
-    <mat-card class="card-container" *ngFor="let character of characters">
+<div class="grid-container">
+    <mat-card id={{character.id}} class="card-container" *ngFor="let character of characters">
         <mat-card-header>
             <mat-card-title>{{ character.name }}</mat-card-title>
         </mat-card-header>
         <img mat-card-image src="{{ character.image }}">
         <mat-card-actions class="card-actions">
-            <button mat-fab color="primary" class="button" (click)="showDetails(character.id)" *ngIf="!this.visibility">
+            <button mat-fab color="primary" class="button" (click)="showDetails(character.id)" *ngIf="!this.isVisible">
                 <mat-icon>visibility</mat-icon>
             </button>
-            <button mat-fab color="primary" class="button" (click)="showDetails(character.id)" *ngIf="this.visibility">
+            <button mat-fab color="primary" class="button" (click)="showDetails(character.id)" *ngIf="this.isVisible">
                 <mat-icon>visibility_off</mat-icon>
             </button>
         </mat-card-actions>
-        <mat-card-footer *ngIf="this.visibility && this.id == character.id">
-            <app-details [status]=character.status 
-                         [species]=character.species 
-                         [origin]=character.origin.name 
-                         [gender]=character.gender 
-                         [location]=character.location.name>
+        <mat-card-footer>
+            <app-details [character]=character
+                         [isVisible]=this.isVisible
+                         [card_id]=this.card_id>
             </app-details>            
         </mat-card-footer>
     </mat-card>

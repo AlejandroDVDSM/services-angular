@@ -7,16 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  @Input() status: any;
-  @Input() species: any;
-  @Input() origin: any;
-  @Input() gender: any;
-  @Input() location: any;
-
+  @Input() character: any;
+  @Input() isVisible: any;
+  @Input() card_id: any;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

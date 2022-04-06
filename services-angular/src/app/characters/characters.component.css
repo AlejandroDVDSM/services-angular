@@ -11,6 +11,10 @@
     width: 30em;
 }
 
+mat-card-header {
+    justify-content: center;
+}
+
 .card-actions {
     display: flex;
     justify-content: center;

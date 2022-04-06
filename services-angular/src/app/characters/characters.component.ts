@@ -9,8 +9,8 @@ import { CharactersService } from '../services/characters.service';
 export class CharactersComponent implements OnInit {
 
   characters: any = {};
-  visibility: boolean = false;
-  id: string = "";
+  isVisible: boolean = false;
+  card_id: string = ""
 
   constructor(private service: CharactersService) { }
 
@@ -20,8 +20,8 @@ export class CharactersComponent implements OnInit {
     });
   }
 
-  showDetails(character_id: string): void {
-    this.id = character_id;
-    this.visibility = !this.visibility;
-  }
+  showDetails(index: string): void {
+    this.card_id = document.getElementsByTagName('mat-card')[parseInt(index) - 1].id
+    this.isVisible = !this.isVisible;
+   }
 }
