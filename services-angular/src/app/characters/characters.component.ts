@@ -17,24 +17,24 @@ export class CharactersComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getAllCharacters().subscribe(characters => {
-      this.characters = characters.results;
-      this.info = characters.info;
+      this.characters = characters.results; // Get all the characters of the actual page
+      this.info = characters.info; // Get all the info about the actual page
     });
   }
 
-  showDetails(card_id: string): void {
+  showDetails(card_id: string): void { // Display details
     this.card_id = card_id
     this.isVisible = !this.isVisible;
   }
 
-  nextPage() {
+  nextPage() { // Navigate to the next page of the API
     this.service.setAPI(this.info.next).subscribe(characters => {
       this.characters = characters.results;
       this.info = characters.info;
     })
   }
   
-  prevPage() {
+  prevPage() { // Navigate to the previos page of the API
     this.service.setAPI(this.info.prev).subscribe(characters => {
       this.characters = characters.results;
       this.info = characters.info;

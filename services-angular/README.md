@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
+services-angular is a single-page application done to practise the information passing between one parent component to its child component. It has been added a service that store the data collected from [The Rick and Morty API](https://rickandmortyapi.com). This is an API that allows the access to a hundreds of characters, images, locations and episodes of the famous TV show Rick and Morty.
+
+
+ Done with [Angular Material](https://material.angular.io). 
+
+The link to the deployment of the application is the next: []().
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
