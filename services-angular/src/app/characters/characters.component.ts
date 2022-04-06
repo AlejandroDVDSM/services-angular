@@ -9,6 +9,8 @@ import { CharactersService } from '../services/characters.service';
 export class CharactersComponent implements OnInit {
 
   characters: any = {};
+  visibility: boolean = false;
+  id: string = "";
 
   constructor(private service: CharactersService) { }
 
@@ -16,5 +18,10 @@ export class CharactersComponent implements OnInit {
     this.service.getAllCharacters().subscribe(characters => {
       this.characters = characters.results;
     });
+  }
+
+  showDetails(character_id: string): void {
+    this.id = character_id;
+    this.visibility = !this.visibility;
   }
 }

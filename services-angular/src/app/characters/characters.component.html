@@ -1,17 +1,24 @@
-<mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile class="grid-container" *ngFor="let character of characters">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>{{ character.name }}</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image src="{{ character.image }}">
-            <mat-card-actions class="card-actions">
-                <button mat-fab color="primary">
-                    <mat-icon>visibility</mat-icon>
-                </button>
-            </mat-card-actions>
-            
-        </mat-card>
-
-    </mat-grid-tile>
-</mat-grid-list>
+<div class="grid-container" >
+    <mat-card class="card-container" *ngFor="let character of characters">
+        <mat-card-header>
+            <mat-card-title>{{ character.name }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{ character.image }}">
+        <mat-card-actions class="card-actions">
+            <button mat-fab color="primary" class="button" (click)="showDetails(character.id)" *ngIf="!this.visibility">
+                <mat-icon>visibility</mat-icon>
+            </button>
+            <button mat-fab color="primary" class="button" (click)="showDetails(character.id)" *ngIf="this.visibility">
+                <mat-icon>visibility_off</mat-icon>
+            </button>
+        </mat-card-actions>
+        <mat-card-footer *ngIf="this.visibility && this.id == character.id">
+            <app-details [status]=character.status 
+                         [species]=character.species 
+                         [origin]=character.origin.name 
+                         [gender]=character.gender 
+                         [location]=character.location.name>
+            </app-details>            
+        </mat-card-footer>
+    </mat-card>
+</div>

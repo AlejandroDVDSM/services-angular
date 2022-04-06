@@ -11,12 +11,14 @@ import { HttpClientModule } from '@angular/common/http'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatCardModule } from '@angular/material/card'
 import { MatIconModule } from '@angular/material/icon'
-import { MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button';
+import { DetailsComponent } from './details/details.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CharactersComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,

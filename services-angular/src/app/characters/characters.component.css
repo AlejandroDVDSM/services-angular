@@ -1,8 +1,21 @@
 .grid-container {
-    margin-bottom: 4em;
+    margin-top: 5em;
+    padding-bottom: 15em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 4em;
+}
+
+.card-container {
+    width: 30em;
 }
 
 .card-actions {
     display: flex;
     justify-content: center;
+}
+
+.button {
+    margin-bottom: 1em
 }
