@@ -1,0 +1,17 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile class="grid-container" *ngFor="let character of characters">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{ character.name }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{ character.image }}">
+            <mat-card-actions class="card-actions">
+                <button mat-fab color="primary">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+            </mat-card-actions>
+            
+        </mat-card>
+
+    </mat-grid-tile>
+</mat-grid-list>

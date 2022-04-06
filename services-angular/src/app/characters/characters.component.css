@@ -1,0 +1,8 @@
+.grid-container {
+    margin-bottom: 4em;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+}
