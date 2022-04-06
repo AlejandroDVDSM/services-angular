@@ -23,3 +23,13 @@ mat-card-header {
 .button {
     margin-bottom: 1em
 }
+
+.buttonsPages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.prevButton {
+    margin-right: 5em;
+}

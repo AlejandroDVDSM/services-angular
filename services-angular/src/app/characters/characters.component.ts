@@ -9,6 +9,7 @@ import { CharactersService } from '../services/characters.service';
 export class CharactersComponent implements OnInit {
 
   characters: any = {};
+  info: any = {};
   isVisible: boolean = false;
   card_id: string = ""
 
@@ -17,11 +18,27 @@ export class CharactersComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAllCharacters().subscribe(characters => {
       this.characters = characters.results;
+      this.info = characters.info;
     });
   }
 
-  showDetails(index: string): void {
-    this.card_id = document.getElementsByTagName('mat-card')[parseInt(index) - 1].id
+  showDetails(card_id: string): void {
+    this.card_id = card_id
     this.isVisible = !this.isVisible;
-   }
+  }
+
+  nextPage() {
+    this.service.setAPI(this.info.next).subscribe(characters => {
+      this.characters = characters.results;
+      this.info = characters.info;
+    })
+  }
+  
+  prevPage() {
+    this.service.setAPI(this.info.prev).subscribe(characters => {
+      this.characters = characters.results;
+      this.info = characters.info;
+    })
+  }
 }
+  

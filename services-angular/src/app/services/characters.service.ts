@@ -8,11 +8,15 @@ import { HttpClient } from '@angular/common/http'
 })
 export class CharactersService {
 
-  private api = "https://rickandmortyapi.com/api/character"
+  private api = "https://rickandmortyapi.com/api/character/"
 
   constructor(private http: HttpClient) { }
 
   public getAllCharacters(): Observable<any> {
     return this.http.get(this.api)
+  }
+
+  public setAPI(newUrl: string): Observable<any> {
+    return this.http.get(newUrl);
   }
 }

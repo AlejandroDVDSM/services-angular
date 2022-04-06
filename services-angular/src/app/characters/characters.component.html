@@ -16,7 +16,16 @@
             <app-details [character]=character
                          [isVisible]=this.isVisible
                          [card_id]=this.card_id>
-            </app-details>            
-        </mat-card-footer>
+                </app-details>            
+            </mat-card-footer>
     </mat-card>
+    <div class="buttonsPages">
+        <button mat-fab color="warn" class="prevButton" (click)="prevPage()">
+            <mat-icon>navigate_before</mat-icon>
+        </button>
+        
+        <button mat-fab color="accent" (click)="nextPage()">
+            <mat-icon>navigate_next</mat-icon>
+        </button>
+    </div>
 </div>
