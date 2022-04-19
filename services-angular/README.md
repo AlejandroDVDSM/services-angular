@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 services-angular is a single-page application done to practise the information passing between one parent component to its child component. It has been added a service that store the data collected from [The Rick and Morty API](https://rickandmortyapi.com). This is an API that allows the access to a hundreds of characters, images, locations and episodes of the famous TV show Rick and Morty.
 
+If the user clicks on the purple button inside each character's card, it is possile to see the details of that character. It is shown 20 character per page, so, if you want to see more characters, use the red and green buttons to navigate through all the pages.
 
  Done with [Angular Material](https://material.angular.io). 
 
